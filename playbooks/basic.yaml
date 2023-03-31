@@ -1,0 +1,20 @@
+---
+- name: Set up a Fedora development environment
+  hosts: fedora
+  become: yes
+  tasks:
+    - name: Update Fedora
+      raw: /usr/bin/dnf -y update 
+
+    - name: Upgrade Fedora
+      raw: /usr/bin/dnf -y update
+    
+    - name: Install development tools
+      dnf:
+        name:
+          - git
+          - neovim
+          - neofetch
+          - python3-pip
+          - python3-devel
+        state: present
