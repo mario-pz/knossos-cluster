@@ -1,5 +1,7 @@
 = Fedora Cluster in Okeanos Knossos
 
+image::https://media.discordapp.net/attachments/1087252349304700940/1091427488757993472/image.png?width=951&height=275[]
+
 = VM Setup
 * We are given 30Gigs Storage, 8GB RAM and 8 Cores. So cut it in pieces.
 * Use Fedora 27
