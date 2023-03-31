@@ -1,12 +1,11 @@
-== Fedora Cluster in Okeanos Knossos
+= Fedora Cluster in Okeanos Knossos
 
-
-== VM Setup
+= VM Setup
 * We are given 30Gigs Storage, 8GB RAM and 8 Cores. So cut it in pieces.
 * Use Fedora 27
 * Make sure all your VMs have your public ssh key
 
-== What you need to
+= What you need to
 * Update hosts file with your server domains
 
 * Ping your VMs to make sure it works
@@ -22,13 +21,13 @@ ansible-playbook -i hosts site.yaml
 ----
 
 * Rock and Roll, fork the repo and make more playbooks 
-  * (dont forget to import it on sites.yaml)
+** (dont forget to import it on sites.yaml)
 
-== Educational Resources
+= Educational Resources
 * Documentation
-  * https://docs.ansible.com/
-  * https://www.youtube.com/watch?v=xRMPKQweySE
-  * https://www.amazon.com/Practical-Ansible-infrastructure-configuration-applications/dp/1789807468 
+** https://docs.ansible.com/
+* https://www.youtube.com/watch?v=xRMPKQweySE
+* https://www.amazon.com/Practical-Ansible-infrastructure-configuration-applications/dp/1789807468 
 
-== License
+= License
 The project is signed under LGPLv3
