@@ -1,0 +1,3 @@
+= Notes
+
+* Server might need a restart after docker group is created
