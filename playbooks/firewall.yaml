@@ -1,0 +1,47 @@
+- hosts: all
+  become: yes
+  tasks:
+    - name: Install firewalld
+      dnf:
+        name: firewalld
+        state: present
+
+    - name: Start and enable firewalld service
+      systemd:
+        name: firewalld
+        state: started
+        enabled: yes
+
+    - name: Allow port 22
+      firewalld:
+        port: 22/tcp
+        permanent: true
+        state: enabled
+        immediate: yes
+
+    - name: Allow port 80
+      firewalld:
+        port: 80/tcp
+        permanent: true
+        state: enabled
+        immediate: yes
+
+    - name: Allow port 443
+      firewalld:
+        port: 443/tcp
+        permanent: true
+        state: enabled
+        immediate: yes
+
+    - name: Set default zone to drop
+      command: firewall-cmd --set-default-zone=drop --permanent
+      args:
+        warn: no
+      notify: Reload firewalld
+
+  handlers:
+    - name: Reload firewalld
+      systemd:
+        name: firewalld
+        state: reloaded
+
